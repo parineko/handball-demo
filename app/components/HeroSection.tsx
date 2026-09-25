@@ -36,7 +36,7 @@ export default function HeroSection() {
         className="absolute inset-0 bg-black/40 z-[60] pointer-events-none"
       />
 
-      {/* 画像ロゴ */}
+      {/* 中央の英語ロゴ */}
       <div className="absolute inset-0 z-[70] flex flex-col items-center justify-center pointer-events-none mt-[-5vh]">
         <motion.div
           initial={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -51,6 +51,22 @@ export default function HeroSection() {
           />
         </motion.div>
       </div>
+
+      {/* 右下の日本語スローガン */}
+      <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1.5, delay: 6.0, ease: "easeOut" }}
+        // スマホでは bottom-20（少し上）に配置してSCROLLとの被りを回避
+        className="absolute bottom-20 right-4 md:bottom-12 md:right-12 z-[80] pointer-events-none"
+      >
+        <img 
+          src="/slogan.png" 
+          alt="堅守猛攻 武雄ハンドボールクラブ" 
+          // スマホでは幅を130pxに縮小し、中央を圧迫しないように調整
+          className="w-[130px] md:w-[280px] h-auto drop-shadow-[0_4px_10px_rgba(0,0,0,0.9)] opacity-90 object-contain"
+        />
+      </motion.div>
 
       {/* スクロールインジケーター */}
       <motion.div
